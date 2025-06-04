@@ -1,19 +1,21 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-# Create your views here.
 
 def index(request):
     contex = {
-        'title': 'Home',
-        'content': 'Главная страница магазина - Home',
-        'list': ['first', 'second'],
-        'dict': {'first': 1},
-        'is_auntification': False
+        'title': 'Home - Главная',
+        'content': 'Магазин мебели HOME',
     }
 
     return render(request, 'main/index.html', contex)
 
 
 def about(request):
-    return HttpResponse("About")
+    contex = {
+        'title': 'Home - О нас',
+        'content': 'Страница О нас',
+        'text_on_page': "Тут будет написана вся информация о нашей компании!"
+    }
+
+    return render(request, 'main/about.html', contex)
